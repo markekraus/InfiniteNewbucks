@@ -12,7 +12,7 @@ namespace InfiniteNewbucks
             switch (sceneName)
             {
                 case "PlayerCore":
-                    var playerModel = Utility.Get<PlayerState>("SceneContext").model;
+                    var playerModel = Utility.Get<PlayerState>("SceneContext")._model;
                     playerModel.AddCurrency(_maxCurrency);
                     playerModel.SetCurrency(_maxCurrency);
                     playerModel.SetCurrencyEverCollected(_maxCurrency);
@@ -20,7 +20,7 @@ namespace InfiniteNewbucks
                 default:
                     if (!sceneName.Contains("Zone"))
                         break;
-                    Utility.Get<PlayerState>("SceneContext").model.SetCurrency(_maxCurrency);
+                    Utility.Get<PlayerState>("SceneContext")._model.SetCurrency(_maxCurrency);
                     break;
             }
         }
